@@ -23,29 +23,10 @@ async def receive_webhook(request: Request):
     :return:
     """
     form_data = await request.form()
-    logger.info(form_data)
-    lead_id = int(form_data.get('leads[add][0][id]'))
-    logger.info('Создана сделка lead_id: %s', lead_id)
-    amo_lead = AmoLead(lead_id=lead_id)
-    contact_phone = amo_lead.get_contact_phone()
-    if not contact_phone:
-        return {"status_code": 500}
-    logger.info('Телефон из сделки: %s', contact_phone)
-    pbx = PbxCallRecord(phone_number=contact_phone)
-    record_file_url = pbx.mp3_url
-    logger.info('Ссылка на запись разговора: %s', record_file_url)
-    sber_speech = SberSpeechClient(record_file_url)
-    transcribed_text = sber_speech.get_recognition()
-    logger.info('Распознанный текст: %s', transcribed_text)
-    gigachat = GigachatClient()
-    gigachat_recommendation = gigachat.get_recommendation(transcribed_text)
-    logger.info('Рекомендация Gigachat: %s', gigachat_recommendation)
-    amo_lead.post_note_to_amo(gigachat_recommendation)
-    gigachat_session.close()
-    pbx_session.close()
-    amo_session.close()
-    session.close()
-    return {"status_code": 200}
+
+    events_contoller(form_data)
+
+    return closing_session()
 
 
 @app.exception_handler(HTTPException)
@@ -56,3 +37,69 @@ async def http_exception_handler(exc: HTTPException):
 @app.exception_handler(Exception)
 async def server_error():
     return {"status_code": 500}
+
+
+async def events_contoller(form_data):
+    logger.info(form_data)
+    await receiving_lead(form_data)
+
+
+async def receiving_lead(form_data):
+    lead_id = int(form_data.get('leads[add][0][id]'))
+    logger.info(f'Создана сделка lead_id: {lead_id}')
+
+    await receiving_contact_phone(lead_id)
+
+
+async def receiving_contact_phone(id):
+    amo_lead = AmoLead(lead_id = id)
+    contact_phone = await amo_lead.get_contact_phone()
+
+    if not contact_phone:
+        return {"status_code": 500}
+    
+    logger.info(f'Телефон из сделки: {contact_phone}')
+
+    result = await receiving_record_file(contact_phone)
+
+    await set_amo_data(amo_lead, result)
+    
+    
+async def receiving_record_file(phone):
+    pbx = PbxCallRecord(phone_number = phone)
+    record_file_url = await pbx.mp3_url
+
+    logger.info(f'Ссылка на запись разговора: {record_file_url}')
+
+    return await processing_sber_speech(record_file_url)
+
+
+async def processing_sber_speech(file_url):
+    sber_speech = SberSpeechClient(file_url)
+    transcribed_text = await sber_speech.get_recognition()
+
+    logger.info(f'Распознанный текст: {transcribed_text}')
+
+    return get_gigaChat_recommendation(transcribed_text)
+
+
+async def get_gigaChat_recommendation(text):
+    gigachat = GigachatClient()
+    gigachat_recommendation = await gigachat.get_recommendation(text)
+
+    logger.info(f'Рекомендация Gigachat: {gigachat_recommendation}')
+
+    return await gigachat_recommendation
+
+
+async def set_amo_data(amo_lead, gigachat_recommendation):
+    await amo_lead.post_note_to_amo(gigachat_recommendation)
+
+
+def closing_session():
+    gigachat_session.close()
+    pbx_session.close()
+    amo_session.close()
+    session.close()
+
+    return {"status_code": 200}
