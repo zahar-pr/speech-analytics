@@ -10,12 +10,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("front")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("DataBuisnessLayer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b2c719758f8baf0e158bff4e49b4c3ffa7cd2ec0")]
-[assembly: System.Reflection.AssemblyProductAttribute("front")]
-[assembly: System.Reflection.AssemblyTitleAttribute("front")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cc6222dcb02aca27bd61b103a7db5096a7d68a7e")]
+[assembly: System.Reflection.AssemblyProductAttribute("DataBuisnessLayer")]
+[assembly: System.Reflection.AssemblyTitleAttribute("DataBuisnessLayer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Создано классом WriteCodeFragment MSBuild.
