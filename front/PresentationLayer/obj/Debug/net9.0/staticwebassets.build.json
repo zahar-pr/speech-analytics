@@ -1,0 +1,20 @@
+{
+  "Version": 1,
+  "Hash": "xY2FGNPtacR3ugX9s+WVe+L06x1tFqBwWCTscLvm2lQ=",
+  "Source": "PresentationLayer",
+  "BasePath": "_content/PresentationLayer",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "PresentationLayer\\wwwroot",
+      "Source": "PresentationLayer",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\StartUp2\\speech-analytics\\front\\PresentationLayer\\wwwroot\\",
+      "BasePath": "_content/PresentationLayer",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [],
+  "Endpoints": []
+}

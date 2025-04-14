@@ -13,31 +13,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cf2ccf61-c9e7-4f2d-bda0-4e260fb11722" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/PresentationLayer/Controllers/AuthorizationController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PresentationLayer/Views/Authorization/Authorization.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PresentationLayer/Views/Shared/_Layout.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PresentationLayer/Views/_ViewImports.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.front/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.front/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationLayer/PresentationLayer.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationLayer/PresentationLayer.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationLayer/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationLayer/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationLayer/obj/Debug/net9.0/PresentationLayer.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationLayer/obj/Debug/net9.0/PresentationLayer.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationLayer/obj/Debug/net9.0/PresentationLayer.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationLayer/obj/Debug/net9.0/PresentationLayer.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationLayer/obj/Debug/net9.0/PresentationLayer.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationLayer/obj/Debug/net9.0/PresentationLayer.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DpaMonitoringSettings">
+    <option name="autoShow" value="false" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/621526284d3e4868b98948aff942206525763e57e194a27623b66c384466/ServiceProviderServiceExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PresentationLayer/Program.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="2vft9auCGdW94Ugm9InB0qAbMmD" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    ".NET Launch Settings Profile.front: http.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "AspNet",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -154,7 +171,7 @@
       <option name="presentableId" value="Default" />
       <updated>1744547808355</updated>
       <workItem from="1744547814135" duration="3000" />
-      <workItem from="1744652493989" duration="657000" />
+      <workItem from="1744652493989" duration="1704000" />
     </task>
     <servers />
   </component>
