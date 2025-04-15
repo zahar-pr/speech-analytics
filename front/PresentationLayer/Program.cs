@@ -7,4 +7,5 @@ app.MapControllerRoute(
     pattern: "{controller=Authorization}/{action=Authorization}/{id?}"
 );
 
+app.UseStaticFiles();
 app.Run();

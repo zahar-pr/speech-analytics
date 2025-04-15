@@ -1,0 +1,155 @@
+html, body {
+    padding: 0;   
+    height: 100%;   
+    min-height: 100vh; 
+}
+
+.zero_margin{
+    height: 100%;
+    margin: 0;
+}
+
+.Layer{
+    height: 100%;
+    display: flex;
+    background-color: #070707;
+}
+
+.auth_background {
+    display: flex;
+    flex-direction: column;
+    width: 888px;
+    height: 947px;
+    background-image: url("../images/Gradient.png");
+    background-size: cover;
+    align-self: center;
+    margin-left: 15px;
+}
+
+.base{
+    color: white;
+    margin: 0;
+    align-self: center;
+}
+
+.company{
+    margin: 350px 0 5px 0;
+    font-size: 32px;
+}
+
+.company_title{
+    margin-bottom: 3px;
+    font-size: 48px;
+}
+
+.company_description{
+    font-size: 24px;
+    width: 350px;
+    color: #CCCCCC;
+    text-align: center;
+}
+
+.steps-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.step{
+    width: 382px;
+    height: 73px;
+    background-color: #1B1B1B;
+    margin-top: 15px;
+    align-self: center;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.first-step{
+    background-color: #EFEFEF;
+}
+
+.counter-steps{
+    width: 44px;
+    height: 44px;
+    border-radius: 100%;
+    margin-left: 20px;
+}
+
+.base_steps-color{
+    background-color: #EFEFEF;
+}
+
+.first-steps-color{
+    background-color: #1B1B1B;
+}
+
+.first-descript-color{
+    color: #000000;
+    font-size: 24px;
+}
+
+.step-descript{
+    font-size: 24px;
+    color: #FFFFFF;
+    max-width: 225px;
+}
+
+.step-margin{
+    margin-left: 25px;
+}
+
+.auth_model{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-title{
+    color: #FFFFFF;
+    font-size: 40px;
+    margin: 0 0 49px 0;
+}
+
+.auth-p{
+    font-size: 24px;
+    color: #FFFFFF;
+    margin: 39px 0 0 0;
+}
+
+
+.auth_model-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.auth-form{
+    width: 535px;
+    height: 58px;
+    background-color: #1B1B1B;
+    border-radius: 20px;
+}
+
+.register-button{
+    display: flex;        
+    justify-content: center; 
+    align-items: center;
+    width: 535px;
+    height: 58px;
+    background-color: #EFEFEF;
+    border-radius: 20px;
+    margin-top: 100px;
+    color: #000000;
+    font-size: 24px;
+    text-decoration: none;
+    transition: background-color 1s, color 1s
+}
+
+.register-button:hover{
+    background-color: #1B1B1B;
+    color: #FFFFFF;
+    transition: background-color 600ms, color 600ms;
+}

@@ -30,3 +30,4 @@ C:\Users\Admin\Desktop\StartUp2\speech-analytics\front\PresentationLayer\obj\Deb
 C:\Users\Admin\Desktop\StartUp2\speech-analytics\front\PresentationLayer\obj\Debug\net9.0\PresentationLayer.pdb
 C:\Users\Admin\Desktop\StartUp2\speech-analytics\front\PresentationLayer\obj\Debug\net9.0\PresentationLayer.genruntimeconfig.cache
 C:\Users\Admin\Desktop\StartUp2\speech-analytics\front\PresentationLayer\obj\Debug\net9.0\ref\PresentationLayer.dll
+C:\Users\Admin\Desktop\StartUp2\speech-analytics\front\PresentationLayer\obj\Debug\net9.0\compressed\i0edpf1cwf-xgas7da5xr.gz

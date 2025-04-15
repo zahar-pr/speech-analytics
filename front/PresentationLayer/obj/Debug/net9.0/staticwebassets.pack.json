@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\StartUp2\\speech-analytics\\front\\PresentationLayer\\wwwroot\\css\\Authorization.css",
+      "PackagePath": "staticwebassets\\css\\Authorization.css"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\StartUp2\\speech-analytics\\front\\PresentationLayer\\wwwroot\\images\\Gradient.png",
+      "PackagePath": "staticwebassets\\images\\Gradient.png"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.PresentationLayer.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.PresentationLayer.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.build.PresentationLayer.props",
+      "PackagePath": "build\\PresentationLayer.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildMultiTargeting.PresentationLayer.props",
+      "PackagePath": "buildMultiTargeting\\PresentationLayer.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildTransitive.PresentationLayer.props",
+      "PackagePath": "buildTransitive\\PresentationLayer.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
