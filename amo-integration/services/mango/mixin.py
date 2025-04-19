@@ -15,6 +15,7 @@ class MangoMixin:
     _vpbx_api_key: str = os.environ["VPBX_API_KEY"]
     _vpbx_api_salt: str = os.environ["VPBX_API_SALT"]
     _client = redis_client
+    _webhook_url = 'https://external-system.com/events/summary'
 
     def _set_sign(self, js: dict) -> NoReturn:
         '''

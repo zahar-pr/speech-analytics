@@ -71,3 +71,4 @@ class PbxCallRecord:
         else:
             logger.error(f"Ошибка получения данных. Статус код ответа: {uuid_response.status_code}")
             raise Exception(f"Ошибка получения данных. Статус код ответа: {uuid_response.status_code}")
+

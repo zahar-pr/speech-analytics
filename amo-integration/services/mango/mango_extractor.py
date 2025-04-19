@@ -47,3 +47,4 @@ class MangoExtractor(MangoMixin):
     def __call__(self):
         contact_id = self._extract_record_id()
         phone = self._extract_phone(contact_id)
+        return phone

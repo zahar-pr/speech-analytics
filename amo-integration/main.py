@@ -8,7 +8,8 @@ from services.gigachat import GigachatClient, gigachat_session
 from services.pbx import PbxCallRecord, pbx_session
 from services.sberspeech import SberSpeechClient, session
 from utils.setup_logger import logger
-
+from models.mango import MangoRequest
+from mango.mango import MangoCallRecord
 app = FastAPI()
 
 dotenv_path = os.path.join(os.path.dirname(__file__), '../.env')
@@ -28,6 +29,11 @@ async def receive_webhook(request: Request):
 
     return closing_session()
 
+@app.post('https://external-system.com/events/summary')
+async def mango_webhook(request: MangoRequest):
+    MangoRequest.check_signature(request)
+    call_record = MangoCallRecord()
+    await call_record()
 
 @app.exception_handler(HTTPException)
 async def http_exception_handler(exc: HTTPException):

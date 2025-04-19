@@ -1,9 +1,8 @@
-from typing import NoReturn
 import httpx
 from amo-integration.models.mango import MangoRecord
 from mixin import MangoMixin
-
-
+from mango_extractor import MangoExtractor
+from fastapi import HTTPException
 # в проде поменять хост!!!
 
 class MangoCallRecord(MangoMixin):
@@ -44,3 +43,16 @@ class MangoCallRecord(MangoMixin):
             else:
                 file_url = response.json()['Location']
         return MangoRecord(recording_id, file_url)
+
+    @classmethod
+    async def _check_signature(cls, request):
+        super()._set_sign(request.js)
+        if super()._sign != request.sign:
+            raise HTTPException(status_code=401, detail="Invalid signature")
+
+    async def __call__(self, request):
+        await self._check_signature(request)
+        request = request.js
+        extractor = MangoExtractor(request["entry_id"])
+        phone = extractor()
+        return await self._get_mp3(phone)
