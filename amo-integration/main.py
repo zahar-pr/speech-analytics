@@ -29,7 +29,7 @@ async def receive_webhook(request: Request):
 
     return closing_session()
 
-@app.post('https://external-system.com/events/summary')
+@app.post('/mango_webhook/')
 async def mango_webhook(request: MangoRequest):
     MangoRequest.check_signature(request)
     call_record = MangoCallRecord()
