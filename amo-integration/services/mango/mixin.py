@@ -3,11 +3,10 @@ import os
 from redis.credentials import UsernamePasswordCredentialProvider
 import redis.asyncio as redis
 from typing import NoReturn
-
+from utils.setup_logger import logger
 creds_provider = UsernamePasswordCredentialProvider(os.environ["username"],
                                                     os.environ["password"])
 redis_client = redis.Redis(host="localhost", port=6379, credential_provider=creds_provider)
-
 class MangoMixin:
     sha_256_hash = hashlib.new("sha256")  # sha256 является обязательным
     _mango_domain: str = os.environ["MANGO_DOMAIN"]

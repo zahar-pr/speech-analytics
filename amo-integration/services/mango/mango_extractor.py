@@ -1,4 +1,4 @@
-from mixin import MangoMixin
+from mixin import MangoMixin, logger
 import httpx
 class MangoExtractor(MangoMixin):
 
@@ -19,6 +19,7 @@ class MangoExtractor(MangoMixin):
 
         response = httpx.post(url, data=body)
         if response.json()['result'] != 1000:
+            logger.error("ERROR: некорректный запрос на извлечение идентификатора звонка. Телефония: mango office")
             raise Exception("Некорректный запрос")
         contact_id = response.json()['contact_id']
         return contact_id
@@ -38,6 +39,7 @@ class MangoExtractor(MangoMixin):
         if response.get('phone', False):
             return response['phone']
         else:
+            logger.error("ERROR: некорректный запрос на извлечение номера абонента. Телефония: mango office")
             raise Exception("Ошибка запроса")
 
     def _save_record_to_redis(self, phone):

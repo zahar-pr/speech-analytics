@@ -10,6 +10,7 @@ from services.sberspeech import SberSpeechClient, session
 from utils.setup_logger import logger
 from models.mango import MangoRequest
 from mango.mango import MangoCallRecord
+from services.interfaces import Telephony
 app = FastAPI()
 
 dotenv_path = os.path.join(os.path.dirname(__file__), '../.env')
@@ -31,6 +32,11 @@ async def receive_webhook(request: Request):
 
 @app.post('/mango_webhook/')
 async def mango_webhook(request: MangoRequest):
+    '''
+    Получение уведомления о завершении звонка по webhook'у от manngo office
+    :param request:
+    :return:
+    '''
     MangoRequest.check_signature(request)
     call_record = MangoCallRecord()
     await call_record()
@@ -58,7 +64,7 @@ async def receiving_lead(form_data):
 
 
 async def receiving_contact_phone(id):
-    amo_lead = AmoLead(lead_id = id)
+    amo_lead = AmoLead(lead_id=id)
     contact_phone = await amo_lead.get_contact_phone()
 
     if not contact_phone:
@@ -66,14 +72,14 @@ async def receiving_contact_phone(id):
     
     logger.info(f'Телефон из сделки: {contact_phone}')
 
-    result = await receiving_record_file(contact_phone)
-
-    await set_amo_data(amo_lead, result)
+    for class_ in Telephony.__subclasses__():
+        result = await receiving_record_file(contact_phone, class_)
+        await set_amo_data(amo_lead, result)
     
     
-async def receiving_record_file(phone):
-    pbx = PbxCallRecord(phone_number = phone)
-    record_file_url = await pbx.mp3_url
+async def receiving_record_file(phone, class_):
+    telephony = class_(phone_number=phone)
+    record_file_url = await telephony()
 
     logger.info(f'Ссылка на запись разговора: {record_file_url}')
 
