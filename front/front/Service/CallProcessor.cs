@@ -1,29 +1,40 @@
-﻿public class CallProcessor
+﻿
+using System.Threading.Tasks;
+
+namespace TelfinAmocrmIntegration.Services
 {
-    private readonly AmocrmClient _amocrmClient;
-
-    public CallProcessor(AmocrmClient amocrmClient)
+    public class CallProcessor
     {
-        _amocrmClient = amocrmClient;
-    }
+        private readonly AmocrmClient _amocrmClient;
+        private readonly TelfinClient _telfinClient;
 
-    public async Task ProcessCallAsync(TelfinWebhook dto)
-    {
-        if (dto.Event != "ended") return;
-
-        var contactId = await _amocrmClient.FindContactByPhoneAsync(dto.Caller);
-        if (contactId == null)
+        public CallProcessor(AmocrmClient amocrmClient, TelfinClient telfinClient)
         {
-            contactId = await _amocrmClient.CreateContactAsync(dto.Caller);
+            _amocrmClient = amocrmClient;
+            _telfinClient = telfinClient;
         }
 
-        var note = new CallNote
+        public async Task ProcessCallAsync(TelfinWebhook dto)
         {
-            EntityId = contactId.Value,
-            Text = $"Звонок: {dto.Caller} → {dto.Callee}. Запись: {dto.RecordingUrl}",
-            Phone = dto.Caller
-        };
+            if (dto.Event != "ended") return;
 
-        await _amocrmClient.AddCallNoteAsync(note);
+            var callDetails = await _telfinClient.GetCallDetailsAsync(dto.CallId);
+            if (callDetails == null) return;
+
+            var contactId = await _amocrmClient.FindContactByPhoneAsync(dto.Caller);
+            if (contactId == null)
+            {
+                contactId = await _amocrmClient.CreateContactAsync(dto.Caller);
+            }
+
+            var note = new CallNote
+            {
+                EntityId = contactId.Value,
+                Text = $"Звонок: {callDetails.Caller} → {callDetails.Callee}. Статус: {callDetails.Status}. Запись: {callDetails.RecordingUrl}",
+                Phone = dto.Caller
+            };
+
+            await _amocrmClient.AddCallNoteAsync(note);
+        }
     }
 }
