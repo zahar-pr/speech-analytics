@@ -1,4 +1,4 @@
-﻿@{
+﻿Authorization.html:@{
     Layout = null;
 }
 
@@ -8,51 +8,73 @@
 <head>
     <meta name = "viewport" content = "width=device-width">
     <link rel = "stylesheet" href = "css/Authorization.css">
-    <title>Авторизация</title>
+    <title>Регистрация</title>
 </head>
 
 <body class = "zero_margin">
 <div class = "Layer">
     <div class = "auth_background zero_margin">
         <p class = "company base">Take Fusion</p>
-        <p class = "company_title base">Начни прямо сейчас</p>
-        <p class = "company_description base">Выполни простые действия для начала работы</p>
+        <p class = "company_title base font_hezaedrus">Начни прямо сейчас</p>
+        <p class = "company_description base font_hezaedrus">Выполни простые действия для начала работы</p>
         <div class = "steps-container">
             <div class = "step first-step">
-                <div class = "counter-steps first-steps-color"></div>
-                <p class = "first-descript-color step-margin">Зарегистрируйся</p>
+                <div class = "counter-steps first-steps-color">
+                    <p class = "counter-steps_first font_hezaedrus">1</p>
+                </div>
+                <p class = "first-descript-color step-margin font_hezaedrus">Зарегистрируйся</p>
             </div>
             <div class = "step">
-                <div class = "counter-steps base_steps-color"></div>
-                <p class = "step-descript step-margin">Выбери телефонию</p>
+                <div class = "counter-steps base_steps-color">
+                    <p class = "counter-steps_second font_hezaedrus">2</p>
+                </div>
+                <p class = "step-descript step-margin font_hezaedrus">Выбери телефонию</p>
             </div>
             <div class = "step">
-                <div class = "counter-steps base_steps-color"></div>
-                <p class = "step-descript step-margin">Введи уникальный токен и начинай</p>
+                <div class = "counter-steps base_steps-color">
+                    <p class = "counter-steps_second font_hezaedrus">3</p>
+                </div>
+                <p class = "step-descript step-margin font_hezaedrus">Введи уникальный токен и начинай</p>
             </div>
         </div>
     </div>
+
     <div class = "auth_model zero_margin">
+        <div class="auth-button-container">
+            <a class="auth-button font_hezaedrus" href="@Url.Action("SingUp", "Authorization")">Войти</a>
+        </div>
         <div class = "auth_model-container">
-            <p class = "auth-title">Регистрация аккаунта</p>
+            <p class = "auth-title font_hezaedrus">Регистрация аккаунта</p>
             <div class = "auth-label">
-                <p class ="auth-p">Логин</p>
-                <div class = "auth-form"></div>
+                <p class ="auth-p font_hezaedrus">Логин</p>
+                <div class = "auth-form">
+                    <label class = "login-input">
+                        <input id="login" type="text" maxlength="25"/>
+                    </label>
+                </div>
             </div>
             <div class = "auth-label">
-                <p class ="auth-p">Email</p>
-                <div class = "auth-form"></div>
+                <p class ="auth-p font_hezaedrus">Email</p>
+                <div class = "auth-form">
+                    <label class = "email-input">
+                        <input id="email" type="email"/>
+                    </label>
+                </div>
             </div>
             <div class = "auth-label">
-                <p class ="auth-p">Пароль</p>
-                <div class = "auth-form"></div>
+                <p class ="auth-p font_hezaedrus">Пароль</p>
+                <div class = "auth-form">
+                    <label class = "password-input">
+                        <input id="password" type="password" maxlength="50"/>
+                    </label>
+                </div>
             </div>
-            
-            <a class = "register-button" href="#">
+            <a class = "register-button font_hezaedrus" href="#">
                 Регистрация
             </a>
         </div>
     </div>
 </div>
 </body>
+
 </html>

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "b/hYLcKD3/i6ausKh68UBj0ZiLCVWFvT2/w+W889isQ=",
+  "Hash": "X15eeMitOha5XLHFilLk7e2fsXlQ7Tc/0PY1KqEYHpw=",
   "Source": "Presentation",
   "BasePath": "_content/Presentation",
   "Mode": "Default",
@@ -17,12 +17,12 @@
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\gats\\Desktop\\projects\\speech-analytics\\front\\Presentation\\obj\\Debug\\net9.0\\compressed\\cowx6rjh41-xgas7da5xr.gz",
+      "Identity": "C:\\Users\\gats\\Desktop\\projects\\speech-analytics\\front\\Presentation\\obj\\Debug\\net9.0\\compressed\\cowx6rjh41-1j2wn0665i.gz",
       "SourceId": "Presentation",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\gats\\Desktop\\projects\\speech-analytics\\front\\Presentation\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Presentation",
-      "RelativePath": "css/Authorization#[.{fingerprint=xgas7da5xr}]?.css.gz",
+      "RelativePath": "css/Authorization#[.{fingerprint=1j2wn0665i}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -31,8 +31,8 @@
       "RelatedAsset": "C:\\Users\\gats\\Desktop\\projects\\speech-analytics\\front\\Presentation\\wwwroot\\css\\Authorization.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "18r6o40uxg",
-      "Integrity": "UfdSYrjMGoZbBcluKoG1xZydSTDSIOdDQkpBXY3QJGQ=",
+      "Fingerprint": "ql9zqcyqk6",
+      "Integrity": "XsWRALq4KIsEeWBN7/0UvgnlagOOTx7y8Hh7D+a1H0A=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\gats\\Desktop\\projects\\speech-analytics\\front\\Presentation\\wwwroot\\css\\Authorization.css"
@@ -52,8 +52,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "xgas7da5xr",
-      "Integrity": "/0CDkjwi5M7j+8XZBjP+rx8GsOqFtv26AyWwd3vXWHA=",
+      "Fingerprint": "1j2wn0665i",
+      "Integrity": "zSuRELGii+FBXJXBHwkLnAb0LaDbg7UfhwW7UzSLlXk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\Authorization.css"
@@ -82,13 +82,13 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/Authorization.css",
-      "AssetFile": "C:\\Users\\gats\\Desktop\\projects\\speech-analytics\\front\\Presentation\\obj\\Debug\\net9.0\\compressed\\cowx6rjh41-xgas7da5xr.gz",
+      "Route": "css/Authorization.1j2wn0665i.css",
+      "AssetFile": "C:\\Users\\gats\\Desktop\\projects\\speech-analytics\\front\\Presentation\\obj\\Debug\\net9.0\\compressed\\cowx6rjh41-1j2wn0665i.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.001408450704"
+          "Quality": "0.001069518717"
         }
       ],
       "ResponseHeaders": [
@@ -98,19 +98,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "709"
+          "Value": "934"
         },
         {
           "Name": "ETag",
-          "Value": "\"UfdSYrjMGoZbBcluKoG1xZydSTDSIOdDQkpBXY3QJGQ=\""
+          "Value": "\"XsWRALq4KIsEeWBN7/0UvgnlagOOTx7y8Hh7D+a1H0A=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 23 Apr 2025 16:02:37 GMT"
+          "Value": "Wed, 23 Apr 2025 18:19:24 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "no-cache"
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Encoding",
@@ -126,18 +126,26 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"/0CDkjwi5M7j+8XZBjP+rx8GsOqFtv26AyWwd3vXWHA=\""
+          "Value": "W/\"zSuRELGii+FBXJXBHwkLnAb0LaDbg7UfhwW7UzSLlXk=\""
         }
       ],
       "EndpointProperties": [
         {
+          "Name": "fingerprint",
+          "Value": "1j2wn0665i"
+        },
+        {
+          "Name": "label",
+          "Value": "css/Authorization.css"
+        },
+        {
           "Name": "integrity",
-          "Value": "sha256-/0CDkjwi5M7j+8XZBjP+rx8GsOqFtv26AyWwd3vXWHA="
+          "Value": "sha256-zSuRELGii+FBXJXBHwkLnAb0LaDbg7UfhwW7UzSLlXk="
         }
       ]
     },
     {
-      "Route": "css/Authorization.css",
+      "Route": "css/Authorization.1j2wn0665i.css",
       "AssetFile": "C:\\Users\\gats\\Desktop\\projects\\speech-analytics\\front\\Presentation\\wwwroot\\css\\Authorization.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -147,7 +155,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2556"
+          "Value": "4462"
         },
         {
           "Name": "Content-Type",
@@ -155,121 +163,21 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"/0CDkjwi5M7j+8XZBjP+rx8GsOqFtv26AyWwd3vXWHA=\""
+          "Value": "\"zSuRELGii+FBXJXBHwkLnAb0LaDbg7UfhwW7UzSLlXk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 23 Apr 2025 16:02:37 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-/0CDkjwi5M7j+8XZBjP+rx8GsOqFtv26AyWwd3vXWHA="
-        }
-      ]
-    },
-    {
-      "Route": "css/Authorization.css.gz",
-      "AssetFile": "C:\\Users\\gats\\Desktop\\projects\\speech-analytics\\front\\Presentation\\obj\\Debug\\net9.0\\compressed\\cowx6rjh41-xgas7da5xr.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "709"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"UfdSYrjMGoZbBcluKoG1xZydSTDSIOdDQkpBXY3QJGQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 23 Apr 2025 16:02:37 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-UfdSYrjMGoZbBcluKoG1xZydSTDSIOdDQkpBXY3QJGQ="
-        }
-      ]
-    },
-    {
-      "Route": "css/Authorization.xgas7da5xr.css",
-      "AssetFile": "C:\\Users\\gats\\Desktop\\projects\\speech-analytics\\front\\Presentation\\obj\\Debug\\net9.0\\compressed\\cowx6rjh41-xgas7da5xr.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.001408450704"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "709"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"UfdSYrjMGoZbBcluKoG1xZydSTDSIOdDQkpBXY3QJGQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 23 Apr 2025 16:02:37 GMT"
+          "Value": "Wed, 23 Apr 2025 18:19:24 GMT"
         },
         {
           "Name": "Cache-Control",
           "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"/0CDkjwi5M7j+8XZBjP+rx8GsOqFtv26AyWwd3vXWHA=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "xgas7da5xr"
+          "Value": "1j2wn0665i"
         },
         {
           "Name": "label",
@@ -277,13 +185,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-/0CDkjwi5M7j+8XZBjP+rx8GsOqFtv26AyWwd3vXWHA="
+          "Value": "sha256-zSuRELGii+FBXJXBHwkLnAb0LaDbg7UfhwW7UzSLlXk="
         }
       ]
     },
     {
-      "Route": "css/Authorization.xgas7da5xr.css",
-      "AssetFile": "C:\\Users\\gats\\Desktop\\projects\\speech-analytics\\front\\Presentation\\wwwroot\\css\\Authorization.css",
+      "Route": "css/Authorization.1j2wn0665i.css.gz",
+      "AssetFile": "C:\\Users\\gats\\Desktop\\projects\\speech-analytics\\front\\Presentation\\obj\\Debug\\net9.0\\compressed\\cowx6rjh41-1j2wn0665i.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -292,7 +200,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2556"
+          "Value": "934"
         },
         {
           "Name": "Content-Type",
@@ -300,56 +208,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"/0CDkjwi5M7j+8XZBjP+rx8GsOqFtv26AyWwd3vXWHA=\""
+          "Value": "\"XsWRALq4KIsEeWBN7/0UvgnlagOOTx7y8Hh7D+a1H0A=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 23 Apr 2025 16:02:37 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "xgas7da5xr"
-        },
-        {
-          "Name": "label",
-          "Value": "css/Authorization.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-/0CDkjwi5M7j+8XZBjP+rx8GsOqFtv26AyWwd3vXWHA="
-        }
-      ]
-    },
-    {
-      "Route": "css/Authorization.xgas7da5xr.css.gz",
-      "AssetFile": "C:\\Users\\gats\\Desktop\\projects\\speech-analytics\\front\\Presentation\\obj\\Debug\\net9.0\\compressed\\cowx6rjh41-xgas7da5xr.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "709"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"UfdSYrjMGoZbBcluKoG1xZydSTDSIOdDQkpBXY3QJGQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 23 Apr 2025 16:02:37 GMT"
+          "Value": "Wed, 23 Apr 2025 18:19:24 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -367,7 +230,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "xgas7da5xr"
+          "Value": "1j2wn0665i"
         },
         {
           "Name": "label",
@@ -375,7 +238,144 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-UfdSYrjMGoZbBcluKoG1xZydSTDSIOdDQkpBXY3QJGQ="
+          "Value": "sha256-XsWRALq4KIsEeWBN7/0UvgnlagOOTx7y8Hh7D+a1H0A="
+        }
+      ]
+    },
+    {
+      "Route": "css/Authorization.css",
+      "AssetFile": "C:\\Users\\gats\\Desktop\\projects\\speech-analytics\\front\\Presentation\\obj\\Debug\\net9.0\\compressed\\cowx6rjh41-1j2wn0665i.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001069518717"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "934"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XsWRALq4KIsEeWBN7/0UvgnlagOOTx7y8Hh7D+a1H0A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 23 Apr 2025 18:19:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"zSuRELGii+FBXJXBHwkLnAb0LaDbg7UfhwW7UzSLlXk=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-zSuRELGii+FBXJXBHwkLnAb0LaDbg7UfhwW7UzSLlXk="
+        }
+      ]
+    },
+    {
+      "Route": "css/Authorization.css",
+      "AssetFile": "C:\\Users\\gats\\Desktop\\projects\\speech-analytics\\front\\Presentation\\wwwroot\\css\\Authorization.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4462"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"zSuRELGii+FBXJXBHwkLnAb0LaDbg7UfhwW7UzSLlXk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 23 Apr 2025 18:19:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-zSuRELGii+FBXJXBHwkLnAb0LaDbg7UfhwW7UzSLlXk="
+        }
+      ]
+    },
+    {
+      "Route": "css/Authorization.css.gz",
+      "AssetFile": "C:\\Users\\gats\\Desktop\\projects\\speech-analytics\\front\\Presentation\\obj\\Debug\\net9.0\\compressed\\cowx6rjh41-1j2wn0665i.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "934"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XsWRALq4KIsEeWBN7/0UvgnlagOOTx7y8Hh7D+a1H0A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 23 Apr 2025 18:19:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-XsWRALq4KIsEeWBN7/0UvgnlagOOTx7y8Hh7D+a1H0A="
         }
       ]
     },

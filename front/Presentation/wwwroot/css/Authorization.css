@@ -1,7 +1,13 @@
+
+
+.font_hezaedrus{
+    font-family: 'Hezaedrus';
+}
+
 html, body {
-    padding: 0;   
-    height: 100%;   
-    min-height: 100vh; 
+    padding: 0;
+    height: 100%;
+    min-height: 100vh;
 }
 
 .zero_margin{
@@ -18,8 +24,8 @@ html, body {
 .auth_background {
     display: flex;
     flex-direction: column;
-    width: 888px;
-    height: 947px;
+    width: 868px;
+    height: 926px;
     background-image: url("../images/Gradient.png");
     background-size: cover;
     align-self: center;
@@ -27,12 +33,14 @@ html, body {
 }
 
 .base{
+
     color: white;
     margin: 0;
     align-self: center;
 }
 
 .company{
+    font-family: 'Hezaedrus';
     margin: 350px 0 5px 0;
     font-size: 32px;
 }
@@ -103,6 +111,7 @@ html, body {
 .auth_model{
     flex-grow: 1;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -124,18 +133,21 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 100px;
 }
 
 .auth-form{
+    display: flex;
     width: 535px;
     height: 58px;
     background-color: #1B1B1B;
     border-radius: 20px;
+    align-items: center;
 }
 
 .register-button{
-    display: flex;        
-    justify-content: center; 
+    display: flex;
+    justify-content: center;
     align-items: center;
     width: 535px;
     height: 58px;
@@ -152,4 +164,92 @@ html, body {
     background-color: #1B1B1B;
     color: #FFFFFF;
     transition: background-color 600ms, color 600ms;
+}
+
+.counter-steps_first{
+    color: #FFFFFF;
+    font-size: 24px;
+}
+
+.counter-steps_second{
+    color: #1B1B1B;
+    font-size: 24px;
+}
+
+.counter-steps{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 126px;
+    height: 35px;
+    background-color: #EFEFEF;
+    border-radius: 20px;
+    color: #000000;
+    font-size: 20px;
+    text-decoration: none;
+    transition: background-color 0.6s, color 0.6s;
+}
+
+.auth-button:hover{
+    background-color: #1B1B1B;
+    color: #FFFFFF;
+    transition: background-color 600ms, color 600ms;
+}
+
+.auth-button-container {
+    display: flex;
+    justify-content: flex-end;
+    padding-left: 700px;
+    padding-bottom: 50px;
+}
+
+.reg-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 186px;
+    height: 35px;
+    background-color: #EFEFEF;
+    border-radius: 20px;
+    color: #000000;
+    font-size: 20px;
+    text-decoration: none;
+    transition: background-color 0.6s, color 0.6s;
+}
+
+.reg-button:hover{
+    background-color: #1B1B1B;
+    color: #FFFFFF;
+    transition: background-color 600ms, color 600ms;
+}
+
+.reg-button-container{
+    height: 105px;
+    display: flex;
+    justify-content: flex-end;
+    padding-left: 700px;
+}
+
+.join_model-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 200px;
+}
+
+input{
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 24px;
+    color: #FFFFFF;
+    margin-left: 10px;
+    width: 513px;
+    filter: brightness(0) invert(1);
 }
