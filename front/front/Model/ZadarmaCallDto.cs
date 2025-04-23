@@ -1,4 +1,4 @@
-﻿public class TelfinCallDto
+﻿public class ZadarmaCallDto
 {
     public string CallId { get; set; }
     public string Caller { get; set; }

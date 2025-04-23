@@ -1,40 +1,36 @@
-﻿
-using System.Threading.Tasks;
+﻿using static ZadarmaWebhookDto;
 
-namespace TelfinAmocrmIntegration.Services
+public class CallProcessor
 {
-    public class CallProcessor
+    private readonly AmocrmClient _amocrmClient;
+    private readonly ZadarmaClient _zadarmaClient;
+
+    public CallProcessor(AmocrmClient amocrmClient, ZadarmaClient zadarmaClient)
     {
-        private readonly AmocrmClient _amocrmClient;
-        private readonly TelfinClient _telfinClient;
+        _amocrmClient = amocrmClient;
+        _zadarmaClient = zadarmaClient;
+    }
 
-        public CallProcessor(AmocrmClient amocrmClient, TelfinClient telfinClient)
+    public async Task ProcessCallAsync(ZadarmaWebhookDto dto)
+    {
+        if (dto.Event != "ended") return;
+
+        var callDetails = await _zadarmaClient.GetCallDetailsAsync(dto.CallId);
+        if (callDetails == null) return;
+
+        var contactId = await _amocrmClient.FindContactByPhoneAsync(dto.Caller);
+        if (contactId == null)
         {
-            _amocrmClient = amocrmClient;
-            _telfinClient = telfinClient;
+            contactId = await _amocrmClient.CreateContactAsync(dto.Caller);
         }
 
-        public async Task ProcessCallAsync(TelfinWebhook dto)
+        var note = new CallNote
         {
-            if (dto.Event != "ended") return;
+            EntityId = contactId.Value,
+            Text = $"Звонок: {callDetails.Caller} → {callDetails.Callee}. Статус: {callDetails.Status}. Запись: {callDetails.RecordingUrl}",
+            Phone = dto.Caller
+        };
 
-            var callDetails = await _telfinClient.GetCallDetailsAsync(dto.CallId);
-            if (callDetails == null) return;
-
-            var contactId = await _amocrmClient.FindContactByPhoneAsync(dto.Caller);
-            if (contactId == null)
-            {
-                contactId = await _amocrmClient.CreateContactAsync(dto.Caller);
-            }
-
-            var note = new CallNote
-            {
-                EntityId = contactId.Value,
-                Text = $"Звонок: {callDetails.Caller} → {callDetails.Callee}. Статус: {callDetails.Status}. Запись: {callDetails.RecordingUrl}",
-                Phone = dto.Caller
-            };
-
-            await _amocrmClient.AddCallNoteAsync(note);
-        }
+        await _amocrmClient.AddCallNoteAsync(note);
     }
 }

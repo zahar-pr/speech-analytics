@@ -1,4 +1,4 @@
-﻿public class TelfinWebhook
+﻿public class ZadarmaWebhookDto
 {
     public string CallId { get; set; } = string.Empty;
     public string Event { get; set; } = string.Empty;

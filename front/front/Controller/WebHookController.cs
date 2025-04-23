@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using TelfinAmocrmIntegration.Services;
 
 [ApiController]
 [Route("api/webhook/telfin")]
@@ -13,7 +12,7 @@ public class WebhookController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> ReceiveCallEvent([FromBody] TelfinWebhook dto)
+    public async Task<IActionResult> ReceiveCallEvent([FromBody] ZadarmaWebhookDto dto)
     {
         await _callProcessor.ProcessCallAsync(dto);
         return Ok();
