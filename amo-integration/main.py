@@ -5,7 +5,7 @@ from fastapi import FastAPI, Request, HTTPException
 
 from services.amo import AmoLead, amo_session
 from services.gigachat import GigachatClient, gigachat_session
-from services.pbx import PbxCallRecord, pbx_session
+from services.pbx import pbx_session
 from services.sberspeech import SberSpeechClient, session
 from utils.setup_logger import logger
 from models.mango import MangoRequest
@@ -26,7 +26,7 @@ async def receive_webhook(request: Request):
     """
     form_data = await request.form()
 
-    events_contoller(form_data)
+    await events_contoller(form_data)
 
     return closing_session()
 
@@ -105,7 +105,10 @@ async def get_gigaChat_recommendation(text):
 
 
 async def set_amo_data(amo_lead, gigachat_recommendation):
-    await amo_lead.post_note_to_amo(gigachat_recommendation)
+    await amo_lead.post_note(gigachat_recommendation)
+
+async def set_bitrix24_data(bitrix_lead, gigachat_recommendation):
+    await bitrix_lead.post_note(gigachat_recommendation)
 
 
 def closing_session():

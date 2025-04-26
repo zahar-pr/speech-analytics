@@ -5,6 +5,7 @@ from requests.adapters import HTTPAdapter, Retry
 
 from models.amo import AmoContact
 from utils.setup_logger import logger
+from interfaces import CRM
 
 dotenv_path = os.path.join(os.path.dirname(__file__), "../.env")
 load_dotenv(dotenv_path=dotenv_path)
@@ -17,7 +18,7 @@ amo_domain = os.environ["AMO_DOMAIN"]
 amo_api_base_url = f"https://{amo_domain}/api/v4/"
 
 
-class AmoLead:
+class AmoLead(CRM):
     def __init__(self, lead_id: int):
         self._token = os.environ["AMO_TOKEN"]
         self._domain = os.environ["AMO_DOMAIN"]
@@ -25,11 +26,12 @@ class AmoLead:
         self._comment_from_id = os.environ["AMO_COMMENT_FROM_ID"]
         self._contact_id = self._get_lead_main_contact_id(lead_id=lead_id)
 
-    def get_contact_phone(self):
+    @property
+    def contacts_phone(self):
         return self._get_first_phone()
 
-    def post_note_to_amo(self, note: str) -> None:
-        return self._post_note_to_amo(note)
+    def post_note(self, note: str) -> None:
+        return self._post_note(note)
 
     def _get_lead_main_contact_id(self, lead_id: int) -> int | None:
         """ 
@@ -55,14 +57,14 @@ class AmoLead:
             main_contact = [
                 contact for contact in contacts_list if contact.is_main_contact
             ][0]
-            logger.info(f"Основной контакт для сделки найден.")
+            logger.info(f"Основной контакт для сделки найден.CRM: Amo")
             return main_contact.contact_id
         else:
             logger.error(
-                f"Не удалось получить основной контакт из сделки. Статус код: {response.status_code}"
+                f"Не удалось получить основной контакт из сделки. Статус код: {response.status_code}.CRM: Amo"
             )
             raise Exception(
-                f"Не удалось получить основной контакт из сделки. Статус код: {response.status_code}"
+                f"Не удалось получить основной контакт из сделки. Статус код: {response.status_code}.CRM: Amo"
             )
 
     def _get_first_phone(self):
@@ -77,10 +79,10 @@ class AmoLead:
             for phone in custom_fields_list
             if phone["field_code"] == "PHONE"
         ]
-        logger.info(f"Телефон получен.")
+        logger.info(f"Телефон получен.CRM: Amo")
         return phones_list
 
-    def _post_note_to_amo(self, note: str) -> None:
+    def _post_note(self, note: str) -> None:
         """
         Отправляет заметку в AMO
         :param note: текст заметки
@@ -102,7 +104,7 @@ class AmoLead:
         response = amo_session.post(url, headers=headers, json=data)
         if response.status_code != 200:
             logger.error(
-                f"Не удалось добавить заметку. Статус код ответа: {response.json()}"
+                f"Не удалось добавить заметку. Статус код ответа: {response.json()}.CRM: Amo"
             )
         else:
-            logger.info(f"Заметка добавлена. Статус код ответа: {response.status_code}")
+            logger.info(f"Заметка добавлена. Статус код ответа: {response.status_code}.CRM: Amo")

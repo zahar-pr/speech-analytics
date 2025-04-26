@@ -6,11 +6,18 @@ class Telephony(ABC):
     @property
     def mp3_url(self):
         pass
+    @abstractmethod
+    def __call__(self):
+        pass
+
+
+class CRM(ABC):
 
     @abstractmethod
-    def _get_mp3(self):
+    @property
+    def contact_phone(self):
         pass
 
     @abstractmethod
-    def __call__(self):
+    def post_note(self, note):
         pass
