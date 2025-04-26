@@ -1,10 +1,23 @@
-var builder = WebApplication.CreateBuilder(args);
+using System;
+using System.Threading.Tasks;
+using Adapters;
 
-builder.Services.AddControllers();
-builder.Services.AddHttpClient<AmocrmClient>();
-builder.Services.AddScoped<CallProcessor>();
+class Program
+{
+    static async Task Main(string[] args)
+    {
+        var adapter = new UISAdapter("api");
 
-var app = builder.Build();
+        var calls = await adapter.FetchCallsAsync("2025-04-01", "2025-04-26");//даты которые нужны
 
-app.MapControllers();
-app.Run();
+        foreach (var call in calls)
+        {
+            if (!string.IsNullOrEmpty(call.RecordUrl))
+            {
+                var savePath = $"records/{call.Id}.mp3";
+                await adapter.DownloadRecordAsync(call.RecordUrl, savePath);
+                Console.WriteLine($"Сохранена запись: {savePath}");
+            }
+        }
+    }
+}

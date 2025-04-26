@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "J+GQ5r/j/cs=",
+  "dgSpecHash": "rSaED6xCMzU=",
   "success": true,
   "projectFilePath": "D:\\Rider Projects\\speech-analytics\\front\\front\\front.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Данил\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

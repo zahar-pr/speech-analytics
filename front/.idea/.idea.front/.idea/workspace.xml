@@ -9,13 +9,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cf2ccf61-c9e7-4f2d-bda0-4e260fb11722" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.front/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.front/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.front/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.front/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/Client/TelfinClient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/front/Client/ZadarmaClient.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/Client/ZadarmaClient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/front/Client/UISClient.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/Controller/WebHookController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/front/Controller/WebHookController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/Model/TelfinCallDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/front/Model/ZadarmaCallDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/Model/TelfinWebhook.cs" beforeDir="false" afterPath="$PROJECT_DIR$/front/Model/ZadarmaWebhookDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/front/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/Model/ZadarmaCallDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/front/Model/UISCallDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/Model/ZadarmaWebhookDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/front/Model/UISWebhookDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/Service/CallProcessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/front/Service/CallProcessor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/front/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/obj/Debug/net9.0/front.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/front/obj/Debug/net9.0/front.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/obj/Debug/net9.0/front.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/front/obj/Debug/net9.0/front.AssemblyInfoInputs.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,18 +28,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "gogy4"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;gogy4&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/zahar-pr/speech-analytics.git",
-    "accountId": "e8fd6cec-1943-4a3b-80d0-1d016a51c947"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/zahar-pr/speech-analytics.git&quot;,
+    &quot;accountId&quot;: &quot;e8fd6cec-1943-4a3b-80d0-1d016a51c947&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -46,20 +49,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "zadarma",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;UIS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.front: http">
     <configuration name="front: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/front/front.csproj" />
@@ -101,7 +104,8 @@
       <option name="presentableId" value="Default" />
       <updated>1744547808355</updated>
       <workItem from="1744547814135" duration="3000" />
-      <workItem from="1745398184888" duration="983000" />
+      <workItem from="1745398184888" duration="1238000" />
+      <workItem from="1745602599248" duration="516000" />
     </task>
     <servers />
   </component>
