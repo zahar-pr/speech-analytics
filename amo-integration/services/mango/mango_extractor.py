@@ -1,5 +1,7 @@
 from mixin import MangoMixin, logger
 import httpx
+
+
 class MangoExtractor(MangoMixin):
 
     def __init__(self, recording_id: str):
@@ -29,7 +31,7 @@ class MangoExtractor(MangoMixin):
 
         js = {
             'contact_id': contact_id,
-            'contacnt_ext_fields': True, #тут без теста не понять, если смысл ставить False
+            'contacnt_ext_fields': True,  # тут без теста не понять, если смысл ставить False
         }
 
         super()._set_sign(js)
@@ -43,8 +45,8 @@ class MangoExtractor(MangoMixin):
             raise Exception("Ошибка запроса")
 
     def _save_record_to_redis(self, phone):
-        self._client.set(phone, self.recording_id) # нужно определиться с единым форматом телефонов
-        #и предусмотреть подгон под нужный формат
+        self._client.set(phone, self.recording_id)  # нужно определиться с единым форматом телефонов
+        # и предусмотреть подгон под нужный формат
 
     def __call__(self):
         contact_id = self._extract_record_id()

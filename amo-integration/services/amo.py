@@ -30,9 +30,6 @@ class AmoLead(CRM):
     def contacts_phone(self):
         return self._get_first_phone()
 
-    def post_note(self, note: str) -> None:
-        return self._post_note(note)
-
     def _get_lead_main_contact_id(self, lead_id: int) -> int | None:
         """ 
         Получает id контакта, который является основным контактом для созданной сделки
@@ -82,7 +79,7 @@ class AmoLead(CRM):
         logger.info(f"Телефон получен.CRM: Amo")
         return phones_list
 
-    def _post_note(self, note: str) -> None:
+    def post_note(self, note: str) -> None:
         """
         Отправляет заметку в AMO
         :param note: текст заметки

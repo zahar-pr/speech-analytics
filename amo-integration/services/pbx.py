@@ -8,6 +8,7 @@ from requests.adapters import HTTPAdapter, Retry
 from models.pbx import CallRecord
 from utils.setup_logger import logger
 from interfaces import Telephony
+
 dotenv_path = os.path.join(os.path.dirname(__file__), '../.env')
 load_dotenv(dotenv_path=dotenv_path)
 
@@ -25,7 +26,6 @@ class PbxCallRecord(Telephony):
         self._token = self._get_access_token()
         self._phone_numbers = phone_number
         self._mp3 = None
-
 
     @property
     def mp3_url(self):
@@ -70,7 +70,8 @@ class PbxCallRecord(Telephony):
             call_record.url = url_response.json()['data']
             return call_record
         else:
-            logger.error(f"ERROR: Ошибка получения данных. Статус код ответа: {uuid_response.status_code}. Телефония: pbx")
+            logger.error(
+                f"ERROR: Ошибка получения данных. Статус код ответа: {uuid_response.status_code}. Телефония: pbx")
             raise Exception(f"Ошибка получения данных. Статус код ответа: {uuid_response.status_code}")
 
     def __call__(self):

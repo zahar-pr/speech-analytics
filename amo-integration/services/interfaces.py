@@ -1,13 +1,15 @@
 from abc import abstractmethod, ABC
 
+
 class Telephony(ABC):
 
     @abstractmethod
     @property
     def mp3_url(self):
         pass
+
     @abstractmethod
-    def __call__(self):
+    def __call__(self, *args, **kwargs):
         pass
 
 
@@ -15,7 +17,7 @@ class CRM(ABC):
 
     @abstractmethod
     @property
-    def contact_phone(self):
+    def contacts_phone(self):
         pass
 
     @abstractmethod

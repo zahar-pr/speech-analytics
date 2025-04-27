@@ -1,29 +1,28 @@
+from __future__ import annotations
 import asyncio
-
 import httpx
-from amo-integration.services.intrfaces import Telephony
-from amo-integration.models.mango import MangoRecord
+from ..interfaces import Telephony
+from models.mango import MangoRecord
 from mixin import MangoMixin
 from mango_extractor import MangoExtractor, logger
 from fastapi import HTTPException
 from typing import NoReturn
-# в проде поменять хост!!!
+
 
 class MangoCallRecord(MangoMixin, Telephony):
 
-    def __init__(self, phone_number):
-        self._sign = None
+    def __init__(self):
         self._mp3 = None
-        self._phone_number = phone_number
+        self._phone_number = None
         super().__init__()
 
     @property
-    def mp3_url(self):
+    def mp3_url(self) -> str:
         if self._mp3 is None:
             self._mp3 = self._get_mp3()
         return self._mp3.url
 
-    async def _get_mp3(self) -> MangoCallRecord:
+    async def _get_mp3(self) -> MangoCallRecord | NoReturn:
         '''
         Проверяем все ключи в кэше, если среди них есть нужный нам контакт, то берем самый
         старый звонок, удаляем этот звонок из записи
@@ -51,14 +50,15 @@ class MangoCallRecord(MangoMixin, Telephony):
         async with httpx.Client() as client:
             response = await client.post(url, body)
             if response.status != 302:
-                logger.error(f"ERROR: Ошибка получения данных. Статус код ответа: {response.status_code}. Телефония: mango office")
+                logger.error(
+                    f"ERROR: Ошибка получения данных. Статус код ответа: {response.status_code}. Телефония: mango office")
                 raise Exception(f"Ошибка получения данных. Статус код ответа: {response.status_code}")
             else:
                 file_url = response.json()['Location']
         return MangoRecord(recording_id, file_url)
 
     @classmethod
-    async def _check_signature(cls, request) -> NoReturn:
+    def _check_signature(cls, request) -> None | NoReturn:
         '''
         Проверка валидности сигнатуры для обработки webhook'а
         :param request:
@@ -66,11 +66,12 @@ class MangoCallRecord(MangoMixin, Telephony):
         '''
         super()._set_sign(request.js)
         if super()._sign != request.sign:
-            logger.error(f"ERROR: Ошибка получения уведомления от mango office. Причина: неверная подпись. Телефония: mango office")
+            logger.error(
+                f"ERROR: Ошибка получения уведомления от mango office. Причина: неверная подпись. Телефония: mango office")
             raise HTTPException(status_code=401, detail="Invalid signature")
 
     @classmethod
-    async def _check_call_status(cls, request) -> bool:
+    def _check_call_status(cls, request) -> None | NoReturn:
         '''
         Дополнительная проверка, поскольку нет смысла обрабатывать несостоявщиеся звонки
         :param request:
@@ -81,12 +82,17 @@ class MangoCallRecord(MangoMixin, Telephony):
                 f"ERROR: Ошибка получения уведомления от mango office. Причина: попытка получения несостоявщегося звонка. Телефония: mango office")
             raise HTTPException(status_code=403, detail="Invalid call status")
 
-    async def __call__(self, request) -> MangoCallRecord:
-        await asyncio.gather(
-            self._check_signature(request),
-            self._check_call_status(request)
-        )
+    def __call__(self, request) -> MangoCallRecord | NoReturn:
+        '''
+        Сделал класс вызываемым, поскольку проще инкапсулировать сложну логику
+        :param request:
+        :return:
+        '''
+        self._check_signature(request),
+        self._check_call_status(request)
         request_data = request.js
         extractor = MangoExtractor(request_data["sip_call_id"])
         phone = extractor()
-        return await self._get_mp3(phone).url
+        self._phone_number = phone
+
+        return self.mp3_url
